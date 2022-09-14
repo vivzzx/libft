@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 15:43:20 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/14 17:15:28 by video-fl         ###   ########.fr       */
+/*   Created: 2022/09/14 16:48:11 by video-fl          #+#    #+#             */
+/*   Updated: 2022/09/14 16:52:03 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isalpha(char c)
 {
-	int	i;
+	int	result;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }
