@@ -1,11 +1,35 @@
-SRC = nome dos arquivos aqui (funcoes)
+NAME = libft.a
+HEADER = libft.h
 
-all:
-	echo "oi oi oi"
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
+	ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
+	ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c \
+	ft_strdup.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
+	ft_putendl_fd.c ft_putnbr_fd.c 
 
-hello:
-	echo "Hello"
-	ls
+OBJ = $(SRC: .c=.o)
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -MMD
+RM = rm -f
+
+.c.o: $(CC) $(CFLAGS) -I libft.h -c $< -o $(<:.c=.o)
+
+all:	$(NAME)
+
+$(NAME): $(OBJ) $(HEADER)
+	ar rcs $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
+	$(RM) $(OBJ)
+
+fclean:	clean
+	$(RM) $(NAME)
+
+re:	fclean all
+
+.phony:	all clean fclean re
 
