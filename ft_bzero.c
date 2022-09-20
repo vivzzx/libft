@@ -6,8 +6,13 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:12:32 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/16 11:51:46 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:29:58 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
