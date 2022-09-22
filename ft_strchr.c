@@ -6,8 +6,17 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:42:28 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/16 15:42:30 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:55:29 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != c)
+	{
+		if (*s == '\0')
+			return (0);
+		s++;
+		}
+	return ((char *)s);
+}
