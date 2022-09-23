@@ -15,14 +15,18 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -MMD
 RM = rm -f
 
+DEPS = $(SRC:.c=.d)
+
 .c.o: $(CC) $(CFLAGS) -I libft.h -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
 
+-include $(DEPS)
 $(NAME): $(OBJ) $(HEADER)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+-include $(DEPS)
 clean:
 	$(RM) $(OBJ)
 
@@ -31,5 +35,5 @@ fclean:	clean
 
 re:	fclean all
 
-.phony:	all clean fclean re
+.PHONY:	all clean fclean re
 
