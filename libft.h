@@ -6,7 +6,7 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 10:53:47 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/23 11:12:43 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:56:17 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <strings.h>
-# include <stdbool.h>
-# include <stddef.h>
+# include <ctype.h>
 
 typedef struct s_list
 {
