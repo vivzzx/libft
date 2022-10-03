@@ -6,34 +6,34 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 12:29:40 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/23 12:15:47 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:09:20 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
-	int	result;
-	int	signal;
+    int i;
+    int sign;
+    int num;
 
-	result = 0;
-	signal = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-	{
-		str++;
-	}
-	if (*str == '-')
-	{
-		signal *= -1;
-	}
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str != '\0' && *str >= '0' && *str <= 9)
-	{
-		result *= 10;
-		result += *str - '0';
-		str++;
-	}
-	return (result * signal);
+    i = 0;
+    sign = 1;
+    num = 0;
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+            str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+        i++;
+    if (str[i] == '-' || str[i] == '+')
+    {
+        if (str[i] == '-')
+            sign = -1;
+        i++;
+    }
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        num = num * 10 + (str[i] - '0');
+        i++;
+    }
+    return (num * sign);
 }

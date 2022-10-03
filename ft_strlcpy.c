@@ -6,8 +6,10 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:42:04 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/16 15:42:07 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/10/01 12:24:53 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
+#include <unistd.h>
+#include <string.h>
