@@ -11,27 +11,29 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-    unsigned int i;
+	unsigned int	i;
 
-    i = 0;
-    if (dst == NULL && src == NULL)
-        return (NULL);
-    while (i < n)
-    {
-        ((char *)dst)[i] = ((char *)src)[i];
-        i++;
-    }
-    return (dst);
+	i = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dst);
 }
-
-int main(void)
+/*
+int	main(void)
 {
-    int a[5] = {1, 2, 3, 4, 5}, b[5];
+	int	a[5];
+
+    a[5] = {1, 2, 3, 4, 5}, b[5];
     int c[5] = {1, 2, 3, 4, 5}, d[5];  
     // Teste da libreria original 
     printf("\n*-* Oficial Test *-*");
@@ -55,4 +57,4 @@ int main(void)
         printf("%d ", d[i]);
     } 
 }
-
+*/
