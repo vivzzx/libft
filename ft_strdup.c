@@ -6,29 +6,27 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:43:46 by video-fl          #+#    #+#             */
-/*   Updated: 2022/10/24 15:46:53 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:35:16 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_strlen(const char *s);
-
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    size_t  n;
-    char    *temp;
+	size_t	n;
+	char	*temp;
 
-    n = -1;
-    temp = malloc(sizeof(char) * ft_strlen(s1) + 1);
-    if (!temp)
-        return (NULL);    
-    temp[ft_strlen(s1)] = '\0';
-    while (s1[++n])
-        temp[n] = s1[n];
-    return (temp);
+	n = -1;
+	temp = malloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (!temp)
+		return (NULL);
+	temp[ft_strlen(s1)] = '\0';
+	while (s1[++n])
+		temp[n] = s1[n];
+	return (temp);
 }
-
+/*
 int main(void)
 {
     const char s1[] = "fgg";
@@ -47,4 +45,4 @@ int main(void)
 
     return (0);
 }
-
+*/
