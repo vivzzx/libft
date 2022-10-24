@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != c)
@@ -17,6 +21,24 @@ char	*ft_strchr(const char *s, int c)
 		if (*s == '\0')
 			return (0);
 		s++;
-		}
+	}
 	return ((char *)s);
 }
+/*
+int main(void) {
+	const char str[] = "http://wwwtutoria.lspointcom";
+  const char ch = '.';
+  char *ret;
+	char *ret2;
+
+	// --> teste oficial:
+  ret = strchr(str, ch);
+	printf("Test Oficial Lib\n");
+	printf("\tString after |%c| is - |%s|\n", ch, ret);
+	// --> teste my lib:
+	ret2 = ft_strchr(str, ch);
+	printf("\nTest My Lib\n");
+	printf("\tString after |%c| is - |%s|\n", ch, ret2);
+  return 0;
+}
+*/

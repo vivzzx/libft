@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 int	main(void)
 {
     const char str[] = "poi.ee.com";
-    const char ch = 'm';
+    const char ch = 'o';
     char *ptr1;
     char *ptr2;
 
@@ -43,4 +43,5 @@ int	main(void)
     printf("*-* My function Test *-*");
     ptr2 = ft_strrchr(str, ch);
     printf("\n\tTest 2: %s\n\n", ptr2);
-}*/
+}
+*/
