@@ -14,32 +14,46 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	//size_t j;
+	unsigned int	i;
 
-	i = 0;
-	//j = ft_strlen(dst);
-	if (len > ft_strlen(dst))
+	//if (len > ft_strlen(dst) || (dst == NULL && src == NULL))
+	if (!dst && !src)
 	{
-		//printf("\n\tpassou no if -- len: %zu -- size dst: %zu\n", len, j);
+		printf("\n\tpassou no NULL\n");
 		return (NULL);
 	}
-	while (i != len)
+	if (dst < src)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		//printf("i: %zu\n", i);
-		i++;
+		printf("\n if \n");
+		i = 0;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			//printf("i: %zu\n", i);
+			i++;
+		}
+	}
+	else {
+		printf("\nelse\n");
+		i = len;
+		printf("\ni: %d\n", i);
+		while (i > 0)
+		{
+			((unsigned char *)dst)[i - 1] = ((unsigned char *)src)[i - 1];
+			printf("\ni: %d\n", i);
+			i--;
+		}
 	}
 	return (dst);
 }
-/*
+
 int	main(void)
 {
-	size_t len = 33;
-	char		dst[] = "A while back I needed to count to";
-	char		dst1[] = "A while back I needed to count to";
+	size_t len = 5;
+	char		dst[] = "dest";
+	char		dst1[] = "dest";
 
-	const char	src[] = "thi\xffs i\xfas \0a g\xde\xadood \0nyan\0cat\0 !\r\n";
+	const char	src[] = "source";
 
     // Teste da libreria original 
     printf("\n*-* Oficial Test *-*");
@@ -54,4 +68,4 @@ int	main(void)
     ft_memmove(dst1, src, len);
     printf("\n\t\tDst After : %s | Src: %s\n", dst1, src);
     return (0);
-} */
+}

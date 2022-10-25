@@ -19,28 +19,26 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c \
 	ft_strdup.c ft_substr.c 
 OBJ = $(SRC:.c=.o)
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -MMD
 RM = rm -f
-DEPS = $(SRC:.c=.d)
 
 #Colors
 DEFCOLOR = \033[0m
 YELLOW = \033[3;33m
 RED = \033[3;31m
 
-.c.o: $(CC) $(CFLAGS) -I libft.h -c $< -o $(<:.c=.o)
+.c.o: $(CC) $(CFLAGS) -I $(HEADER) -c $< -o $(<:.c=.o)
 
 #Rules
 all:	$(NAME)
 
--include $(DEPS)
 $(NAME): $(OBJ) $(HEADER)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 .PHONY:	all clean fclean re 
 
--include $(DEPS)
 clean:
 	@echo "$(RED)Clean 🧹$(DEFCOLOR)"
 	$(RM) $(OBJ)
