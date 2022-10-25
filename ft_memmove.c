@@ -14,42 +14,36 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int	i;
+	size_t	i;
 
-	//if (len > ft_strlen(dst) || (dst == NULL && src == NULL))
+	i = 0;
 	if (!dst && !src)
 	{
 		printf("\n\tpassou no NULL\n");
 		return (NULL);
 	}
-	if (dst < src)
+	if (src < dst)
 	{
-		printf("\n if \n");
-		i = 0;
-		while (i < len)
+		while (len > 0)
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			//printf("i: %zu\n", i);
-			i++;
+			((char *)dst)[len - 1] = ((char *)src)[len - 1];
+			len--;
 		}
 	}
-	else {
-		printf("\nelse\n");
-		i = len;
-		printf("\ni: %d\n", i);
-		while (i > 0)
+	else
+	{
+		while (i < len)
 		{
-			((unsigned char *)dst)[i - 1] = ((unsigned char *)src)[i - 1];
-			printf("\ni: %d\n", i);
-			i--;
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
 		}
 	}
 	return (dst);
 }
-
+/*
 int	main(void)
 {
-	size_t len = 5;
+	size_t len = 2;
 	char		dst[] = "dest";
 	char		dst1[] = "dest";
 
@@ -68,4 +62,4 @@ int	main(void)
     ft_memmove(dst1, src, len);
     printf("\n\t\tDst After : %s | Src: %s\n", dst1, src);
     return (0);
-}
+} */
