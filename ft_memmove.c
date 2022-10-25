@@ -11,19 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
+	//size_t j;
 
 	i = 0;
+	//j = ft_strlen(dst);
 	if (len > ft_strlen(dst))
-		return (0);
+	{
+		//printf("\n\tpassou no if -- len: %zu -- size dst: %zu\n", len, j);
+		return (NULL);
+	}
 	while (i != len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		//printf("i: %zu\n", i);
 		i++;
 	}
@@ -32,23 +35,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 /*
 int	main(void)
 {
-	char		dst[] = "lorem ipsum dolor sit a";
-	const char	src[] = "lorem ipsum dolor sit amet";
-	char		dst1[] = "lorem ipsum dolor sit a";
-	const char	src1[] = "lorem ipsum dolor sit amet";
+	size_t len = 33;
+	char		dst[] = "A while back I needed to count to";
+	char		dst1[] = "A while back I needed to count to";
+
+	const char	src[] = "thi\xffs i\xfas \0a g\xde\xadood \0nyan\0cat\0 !\r\n";
 
     // Teste da libreria original 
     printf("\n*-* Oficial Test *-*");
     printf("\n\tTest 1:\n\t\tDst Before: %s | Src: %s", dst, src);
-    memmove(dst, src, 22);
+    memmove(dst, src, len);
     printf("\n\t\tDst After : %s | Src: %s\n", dst, src);
     
     // Teste da  minha libreria 
     printf("\n*-* My function Test *-*");
-    printf("\n\tTest 2:\n\t\tDst Before: %s | Src: %s", dst1, src1);
-    printf("\n");
-    ft_memmove(dst1, src1, 22);
-    printf("\n\t\tDst After : %s | Src: %s\n", dst1, src1);
+    printf("\n\tTest 2:\n\t\tDst Before: %s | Src: %s", dst1, src);
+    //printf("\n");
+    ft_memmove(dst1, src, len);
+    printf("\n\t\tDst After : %s | Src: %s\n", dst1, src);
     return (0);
-}
-*/
+} */

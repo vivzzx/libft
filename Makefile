@@ -30,6 +30,7 @@ RED = \033[3;31m
 
 .c.o: $(CC) $(CFLAGS) -I libft.h -c $< -o $(<:.c=.o)
 
+#Rules
 all:	$(NAME)
 
 -include $(DEPS)
@@ -41,10 +42,11 @@ $(NAME): $(OBJ) $(HEADER)
 
 -include $(DEPS)
 clean:
-	@echo "$(YELLOW)Cleaning$(DEFCOLOR)"
+	@echo "$(RED)Clean 🧹$(DEFCOLOR)"
 	$(RM) $(OBJ)
 
 fclean:	clean
+	@echo "$(RED)FClean 🧹$(DEFCOLOR)"
 	$(RM) $(NAME)
 
 re:	fclean all

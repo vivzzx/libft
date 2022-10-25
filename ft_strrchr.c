@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -21,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	size = ft_strlen(s);
 	while (size >= 0)
 	{
-		if (s[size] == c)
+		if (s[size] == (char)c)
 			return ((char *)s + size);
 		size--;
 	}
