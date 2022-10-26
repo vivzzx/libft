@@ -15,23 +15,29 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *subs;
-    int i;
+    size_t i;
     
     i = 0;
-    if (ft_strlen(s) < start)
+    if (!s)
         return (NULL);
-    subs = (char *)malloc((len + 1) * sizeof(char));
+    if ((len > ft_strlen(s) && start < ft_strlen(s)) || (len > ft_strlen(s) && start < ft_strlen(s)))
+        subs = (char *)malloc((ft_strlen(s) - (size_t)start + 1) * sizeof(char));
+    //if ((size_t)start > ft_strlen(s))
+    //    subs = (char *)malloc(1 * sizeof(char));
+    else
+        subs = (char *)malloc((len + 1) * sizeof(char));
     if (!subs)
         return (NULL);
     /*while (start > i)
         i++;
     printf("\ni: %d\n", i);*/
-    while (len || (s[start] == '\0'))
+    //while (len || (s[start] == '\0'))
+    while ((size_t)start < ft_strlen(s) && len > i)
     {
         subs[i] = (char)s[start];
         i++;
         start++;
-        len--;
+        //len--;
     }
     subs[i] = '\0';
     return (subs);
@@ -45,8 +51,8 @@ int main (void)
     char *res1;
 
     char *s2 = "01234";
-    int start2 = 3;
-    size_t len2 = 6;
+    int start2 = 10;
+    size_t len2 = 10;
 
     char *res2;
 
@@ -61,4 +67,4 @@ int main (void)
     printf("\n\t\tResult 2: %s", res2);
     printf("fim");
     return (0);
-} */
+}*/
