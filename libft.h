@@ -6,7 +6,7 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 10:53:47 by video-fl          #+#    #+#             */
-/*   Updated: 2022/10/24 17:10:44 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:49:55 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char			*ft_strdup(const char *s1);
 void			*ft_calloc(size_t count, size_t size);
 
 /* Functions Part 2 */
-//char			*ft_itoa(int n);
+char			*ft_itoa(int n);
 //void			ft_putchar_fd(char c, int fd);
 //void			ft_putstr_fd(char *s, int fd);
 //void			ft_putendl_fd(char *s, int fd);
