@@ -6,8 +6,13 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:44:49 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/16 15:44:50 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:06:58 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char    **ft_split(char const *s, char c)
+{
+
+}
