@@ -6,11 +6,25 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:44:49 by video-fl          #+#    #+#             */
-/*   Updated: 2022/11/09 18:41:43 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:21:33 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char **set_free(char **str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free (str);
+	return(NULL);
+}
 
 static size_t	total_words(const char *s, char c)
 {
@@ -85,7 +99,7 @@ char	**ft_split(char const *s, char c)
 	str = (char *)s;
 	result = malloc((total_words(s, c) + 1) * sizeof(char *));
     if (!result)
-        return (NULL);
+		return (NULL);
 	while (word_count < total_words(str, c))
 	{
 		//printf("\nloop de fora\n");
@@ -94,7 +108,9 @@ char	**ft_split(char const *s, char c)
 			//printf("\nentrou no if --> s[i]: %zu == %c \n", i, str[i - 1]);
 			temp = just_word(str, c, i);
 			//printf("\ntemp: %s\n", temp);
+			// TEST AQUIIIIIII AAAAAA HELP
 			result[word_count] = (char *)ft_strdup(temp);
+			//ft_strlcpy(result[word_count], temp, ft_strlen(temp));
 			word_count++;
 			i = i + ft_strlen(temp);
 			//printf("\ni: %zu | word_count: %zu\n", i, word_count);
@@ -106,7 +122,7 @@ char	**ft_split(char const *s, char c)
 	result[word_count] = ft_strdup("\0");
 	return (result);
 }
-/*
+
 int	main(void)
 {
 	char *s;
@@ -127,4 +143,3 @@ int	main(void)
 	}
 	return (0);
 }
-*/
