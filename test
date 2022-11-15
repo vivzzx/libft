@@ -1,0 +1,125 @@
+	/*
+static char	*word(char *s, size_t pos)
+{
+    char    *res;
+    size_t  index;
+
+    index = 0;
+    while (i > 0)
+    {
+        res[pos][index] =  s[i];
+        index--;
+    }
+    return (res);
+}
+*/
+    
+    
+    
+    
+    
+    
+    --------------------------
+    
+    size_t	i;
+	size_t	word_count;
+	size_t	k;
+	size_t	delim;
+	char	*words;
+	size_t	len;
+	char	**result;
+    char temp;
+
+	i = 0;
+	word_count = 0;
+	k = 0;
+	delim = 0;
+    
+    
+    
+    
+    // contador de palavras e delimitadores
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			delim += 1;
+			if (s[i - 1] != c)
+				words += 1;
+		}
+		i++;
+	}
+	if (s[i - 1] != c)
+		words += 1;
+	printf("\nNum de delim: %zu\nNum de words: %zu\n", delim, words);
+	// fim do contador
+
+
+printf("\nNum de delim: %zu\nNum de words: %zu\n", delim, words);
+	len = (ft_strlen(s) + 1) - delim; // +1 para o \0;
+	printf("\nlen: %zu\n", len);
+	result = (char **)malloc((len + words) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	printf("\ni: %zu", i);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			word_count++;
+			k = 0;
+		}
+		result[word_count][k] = s[i];
+		printf("teste: %c", result[word_count][k]);
+		i++;
+	}
+	return (result);
+
+
+
+
+    /*
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			word_count++;
+			k = 0;
+		}
+		//words[word_count][k] = s[i];
+		printf("teste: %c", result[word_count][k]);
+		i++;
+	} */
+
+
+
+
+    -----------------------
+    TOTAL words
+
+
+    static size_t	total_words(const char *s, char c)
+{
+	unsigned int	i;
+	unsigned int	words;
+
+	i = 0;
+	words = 0;
+	if (*s == '\0')
+		return (words);
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			//delim += 1;
+			if (s[i - 1] != c)
+				words += 1;
+		}
+		i++;
+	}
+	if (s[i - 1] != c)
+		words += 1;
+    printf("\t\t\n Total words: %d\n", words);
+	return (words);
+}

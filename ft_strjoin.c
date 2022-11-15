@@ -6,7 +6,7 @@
 /*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:44:29 by video-fl          #+#    #+#             */
-/*   Updated: 2022/10/28 11:33:13 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:44:02 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	size;
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	j = 0;
 	size = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
