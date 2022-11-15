@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
+/*   By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:44:49 by video-fl          #+#    #+#             */
-/*   Updated: 2022/11/11 13:21:33 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:46:40 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char **set_free(char **str)
+/*
+static char	**set_free(char **str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -25,7 +25,7 @@ static char **set_free(char **str)
 	free (str);
 	return(NULL);
 }
-
+*/
 static size_t	total_words(const char *s, char c)
 {
 	unsigned int	i;
@@ -39,8 +39,8 @@ static size_t	total_words(const char *s, char c)
 	{
 		if ((s[i - 1] == c) && (s[i] != c))
 			words += 1;
-        if ((i == 0) && (s[i] != c))
-            words += 1;
+		if ((i == 0) && (s[i] != c))
+			words += 1;
 		i++;
 	}
 	//if (s[i - 1] != c)
@@ -58,7 +58,7 @@ static char	*just_word(const char *s, char c, size_t pos)
 
 	i = pos; // posicao no s principal
 	r = 0;
-	//printf("\n\t\tjust word: i: %zu\n", i);
+	printf("\n\t\tjust word: i: %zu\n", i);
 	counter = 0;
 	//if (*s == '\0')
 	//	return (NULL);
@@ -76,13 +76,13 @@ static char	*just_word(const char *s, char c, size_t pos)
 	{
 		//printf("\n\t\tjust word loop here\n");
 		result[r] = (char)s[i];
-		//printf("\n\t\tindex: %zu | s[i]: %c\n", i, s[i]);
+		printf("\n\t\tindex: %zu | s[i]: %c\n", i, s[i]);
 		counter--;
 		r++;
 		i++;
 	}
 	result[r] = '\0';
-	//printf("\t\tjust word result: %s\n", result);
+	printf("\t\tjust word result: %s\n", result);
 	return (result);
 }
 
@@ -92,25 +92,27 @@ char	**ft_split(char const *s, char c)
 	size_t	word_count;
 	char	**result;
 	char	*temp;
+	//char	buffer[16384];
 	char	*str;
 
 	i = 0;
 	word_count = 0;
 	str = (char *)s;
 	result = malloc((total_words(s, c) + 1) * sizeof(char *));
-    if (!result)
+	if (!result)
 		return (NULL);
 	while (word_count < total_words(str, c))
 	{
 		//printf("\nloop de fora\n");
-        if ((str[i] != c && str[i - 1] == c) || (str[i] != c && i == 0))
+		if ((str[i] != c && str[i - 1] == c) || (str[i] != c && i == 0))
 		{
 			//printf("\nentrou no if --> s[i]: %zu == %c \n", i, str[i - 1]);
 			temp = just_word(str, c, i);
 			//printf("\ntemp: %s\n", temp);
 			// TEST AQUIIIIIII AAAAAA HELP
-			result[word_count] = (char *)ft_strdup(temp);
-			//ft_strlcpy(result[word_count], temp, ft_strlen(temp));
+			//result[word_count] = (char *)ft_strdup(temp);
+			result[word_count] = malloc((ft_strlen(temp)) * sizeof(char *));
+			ft_strlcpy(temp, result[word_count], ft_strlen(temp));
 			word_count++;
 			i = i + ft_strlen(temp);
 			//printf("\ni: %zu | word_count: %zu\n", i, word_count);
@@ -119,17 +121,17 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	//printf("\nfora do loop - i: %zu | word_count: %zu\n", i, word_count);
-	result[word_count] = ft_strdup("\0");
+	//result[word_count] = '\0';
 	return (result);
 }
-
+/*
 int	main(void)
 {
-	char *s;
-	char c;
-	char **result1;
+	char	*s;
+	char	c;
+	char	**result1;
 
-	s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+	s = "hello!";
 	c = ' ';
 	// My library test
 	printf("\n*-* My function Test *-*");
@@ -143,3 +145,4 @@ int	main(void)
 	}
 	return (0);
 }
+*/

@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
+/*   By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:41:25 by video-fl          #+#    #+#             */
-/*   Updated: 2022/10/01 13:24:11 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:07:52 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

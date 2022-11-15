@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 13:11:01 by video-fl          #+#    #+#             */
+/*   Updated: 2022/11/15 15:19:16 by video-fl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -47,17 +57,10 @@ void			*ft_calloc(size_t count, size_t size);
 
 /* Functions Part 2 */
 char			*ft_itoa(int n);
-<<<<<<< HEAD
-//void			ft_putchar_fd(char c, int fd);
-//void			ft_putstr_fd(char *s, int fd);
-//void			ft_putendl_fd(char *s, int fd);
-//void			ft_putnbr_fd(int n, int fd);
-=======
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
->>>>>>> 90687c708d3841f7e5124b79b1be82f3aa17a157
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
