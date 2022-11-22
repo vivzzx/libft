@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
+/*   By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:44:15 by video-fl          #+#    #+#             */
-/*   Updated: 2022/10/26 12:34:29 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:35:14 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		j++;
 	}
 	subs[i] = '\0';
+	//for (size_t k = 0; k <= i; k++)
+	//	printf("substr index = %zu: %c\n", k, subs[k]);
 	return (subs);
 }

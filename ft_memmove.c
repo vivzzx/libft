@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+        */
+/*   By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:41:42 by video-fl          #+#    #+#             */
-/*   Updated: 2022/09/16 15:41:44 by video-fl         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:10:41 by video-fl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (!dst && !src)
 	{
-		printf("\n\tpassou no NULL\n");
 		return (NULL);
 	}
 	if (src < dst)
