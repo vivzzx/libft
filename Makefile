@@ -6,7 +6,7 @@
 #    By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:12:28 by video-fl          #+#    #+#              #
-#    Updated: 2022/11/08 18:04:32 by video-fl         ###   ########.fr        #
+#    Updated: 2022/11/23 18:41:34 by video-fl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ all:	$(NAME)
 $(NAME): $(OBJ) $(HEADER)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
+	@echo "📖 $(YELLOW)Library created$(DEFCOLOR)"
 
 .PHONY:	all clean fclean re 
 
