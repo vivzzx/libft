@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: video-fl <video-fl@student.42barcel>       +#+  +:+       +#+         #
+#    By: video-fl <video-fl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:12:28 by video-fl          #+#    #+#              #
-#    Updated: 2022/11/23 18:41:34 by video-fl         ###   ########.fr        #
+#    Updated: 2022/11/30 12:19:37 by video-fl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,11 +43,11 @@ $(NAME): $(OBJ) $(HEADER)
 .PHONY:	all clean fclean re 
 
 clean:
-	@echo "$(RED)Clean 🧹$(DEFCOLOR)"
+	@echo "$(RED)🧹 Cleaning $(DEFCOLOR)"
 	$(RM) $(OBJ)
 
 fclean:	clean
-	@echo "$(RED)FClean 🧹$(DEFCOLOR)"
+	@echo "$(RED)🧹 FClean starting $(DEFCOLOR)"
 	$(RM) $(NAME)
 
 re:	fclean all
